@@ -1,0 +1,69 @@
+/*  NOTE: Creator pages normally have a theme applied to them too, and
+    many of the style rules may be more specific than rules you specify 
+    here, so will "win".  If your styles do not appear to take effect, try 
+    adding "!important" at the end; for example, to set the background color 
+    for the <body>  tag, use
+     body {  background-color: blue !important };
+*/
+
+/* Style rules to make data tables look better */
+
+
+.jaasTitle-text {
+   color: #cccccc;
+   font-family: Verdana,Arial,Helvetica,sans-serif;
+   font-size: 24px;
+} 
+  
+.pageTitle-text {
+   color: #4a5c69;
+   font-family: Verdana,Arial,Helvetica,sans-serif;
+   font-size: 30px;
+}
+.list-header {
+  background-color: #eeeeee;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.list-paging-header {
+  background-color: white;
+}
+
+.list-paging-footer {
+  background-color: white;
+}
+
+.list-row-even { 
+}
+
+.list-row-odd { 
+  background-color: #eeeeee;
+}
+
+/* Style rules for message severity levels */
+
+.infoMessage {
+  color: black;
+}
+
+.warnMessage {
+  color: orange;
+  font-weight: bold;
+}
+
+.errorMessage {
+  color: red;
+  font-weight: bold;
+}
+
+.fatalMessage {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Temporary workaround for a Tree component related bug.
+   Sorry you had to see this... :) */
+.TreeRow { clear: both; line-height: 22px }
+

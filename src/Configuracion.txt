@@ -1,0 +1,93 @@
+_____________________________________________________________________
+
+Cónfiguración del datasource (domain.xml)
+_____________________________________________________________________
+
+1.
+
+<jdbc-connection-pool connection-validation-method="auto-commit" datasource-classname="org.postgresql.jdbc3.Jdbc3PoolingDataSource" fail-all-connections="false" idle-timeout-in-seconds="300" is-connection-validation-required="false" is-isolation-level-guaranteed="false" max-pool-size="32" max-wait-time-in-millis="60000" name="SipDS" pool-resize-quantity="2" res-type="javax.sql.ConnectionPoolDataSource" steady-pool-size="8">
+      <property name="InitialConnections" value="0"/>
+      <property name="MaxConnections" value="0"/>
+      <property name="driverClassName" value="org.postgresql.Driver"/>
+      <property name="DatabaseName" value="Sip"/>
+      <property name="LoginTimeout" value="0"/>
+      <property name="Password" value="un"/>
+      <property name="PrepareThreshold" value="0"/>
+      <property name="User" value="un"/>
+      <property name="PortNumber" value="5432"/>
+      <property name="ServerName" value="localhost"/>
+</jdbc-connection-pool>
+
+2. Añadir postgresql-8.1-405.jdbc3 al classpath del SJAS
+_____________________________________________________________________
+
+Configuración Módulo de Seguridad en JAS
+_____________________________________________________________________
+
+
+1. Editar los archivos login.conf y server.policy que estan en la ruta del
+dominio del servidor de aplicaciones. Por ejemplo,
+
+	AppServer8\domains\domain1\config
+
+2. Agregar la siguiente información a cada archivo
+
+login.conf
+	sipAuth{
+		com.unal.convenio.sip.security.jdbc.JdbcLoginModule required; 
+	};
+
+server.policy
+
+grant codeBase "file:${com.sun.aas.instanceRoot}/applications/j2ee-modules/sip/WEB-INF/-" {
+            permission javax.security.auth.AuthPermission "createLoginContext.sipAuth";
+            permission javax.security.auth.AuthPermission "modifyPrincipals";
+            permission javax.security.auth.AuthPermission "getLoginConfiguration";	
+	    permission java.lang.RuntimePermission "getProtectionDomain";
+	    permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+            permission java.util.PropertyPermission  "*", "read,write";
+};
+
+3. Copiar cacerts.jks keystore.jks server.cer a AppServer8\domains\domain1\config
+
+4. Reemplazar el nombre del certificado y las llaves por defecto por sipol en los siguientes archivos:
+    wss-server-config.xml domain.xml
+   
+_____________________________________________________________________
+
+Librerias utilizadas por el proyecto
+_____________________________________________________________________
+
+1. Añadir las siguientes librerias al proyecto:
+	
+	hibernate3.jar
+	dom4j-1.6.1.jar
+	asm.jar
+	cglib-2.1.3.jar
+        antlr-2.7.6rc1.jar
+        commons-email-1.0.jar
+______________________________________________________________________
+
+Configuracion del web.xml
+______________________________________________________________________
+
+Cuando se crea un proyecto en Sun Creator 2, el tag original debe ser cambiado por el siguiente; de otra
+forma no es posible hacer deployment en SJAS.
+
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+______________________________________________________________________
+
+Configuracion de los puertos en SJAS
+______________________________________________________________________
+
+Configurar puerto 80 para HTTP y puero 443 para HTTPS
+
+______________________________________________________________________
+
+Deployment
+______________________________________________________________________
+
+Hacer deployment en el context root /Sip

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.unal.convenio.sip.admin.voh.RolVo" table="TSIP_ADMIN_ROL">
+<id name="id_rol" unsaved-value="null">
+<generator class="sequence">
+    <param name="sequence">SEQ_TSIPADMINROL</param>
+</generator>
+</id>
+<property name="nombre"  not-null="true"/>
+<property name="descripcion" not-null="true"/>
+<!--
+    Esta propiedad debe ir al final / restricción del driver de oracle que cierra los streams si no son leidos 
+    primero que otra propiedad.
+-->
+<set name="usuarios" table="TSIP_ADMIN_USUARIO_ROL">
+    <key column="ID_ROL"/>
+    <many-to-many class="com.unal.convenio.sip.admin.voh.UsuarioVo" column="ID_USUARIO"/>
+</set>
+</class>
+</hibernate-mapping>
+

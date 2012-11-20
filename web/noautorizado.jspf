@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div style="height: 62px; width: 100%; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://www.sun.com/web/ui">
+    <f:subview id="noautorizado">
+        <ui:alert binding="#{noautorizado.alert1}" id="alert1" style="left: 24px; top: 10px; position: relative; width: 166px" summary="No autorizado"/>
+    </f:subview>
+</div>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config  loginPage="/Sip/faces/login.jsp" httpPort="80"  httpsPort="443"> 
+  <pagina uri="login.jsp"/>
+</config>

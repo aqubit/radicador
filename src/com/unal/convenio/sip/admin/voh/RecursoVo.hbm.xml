@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.unal.convenio.sip.admin.voh.RecursoVo" table="TSIP_ADMIN_RECURSO">
+<id name="id_recurso" unsaved-value="null">
+<generator class="sequence">
+    <param name="sequence">SEQ_TSIPADMINRECURSO</param>
+</generator>
+</id>
+<many-to-one name="idref_tiporecurso" cascade="none" class="com.unal.convenio.sip.admin.voh.TablaReferenciaVo" not-null="true"/>
+<property name="nombre"  not-null="true"/>
+<property name="descripcion" not-null="true"/>
+<set name="permisos" table="TSIP_ADMIN_PERMISO">
+   <key column="id_recurso"/>
+   <composite-element class="com.unal.convenio.sip.admin.voh.RolPermisoVo">
+        <many-to-one name="rol" column="ID_ROL"  class="com.unal.convenio.sip.admin.voh.RolVo" not-null="true"/>
+        <many-to-one name="permiso" column="IDREF_TIPOPERMISO" class="com.unal.convenio.sip.admin.voh.TablaReferenciaVo" not-null="true"/>
+    </composite-element>
+</set>
+</class>
+<sql-query name="queryRestricciones">
+        select 
+                a.nombre
+        from
+                tsip_admin_recurso as a 
+        left join 
+                tsip_admin_permiso as b 
+        on	
+                a.id_recurso = b.id_recurso
+        left join
+                tsip_tabla_referencia as c
+        on
+                b.idref_tipopermiso = c.id_referencia
+        where
+                b.id_rol in ( select id_rol from tsip_admin_usuario_rol where id_usuario = :id_usuario )
+        and
+                c.nombre like '%'||:permiso||'%'
+</sql-query>
+</hibernate-mapping>
+

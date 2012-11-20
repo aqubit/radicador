@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.unal.convenio.sip.common.voh.LogVo" table="TSIP_LOG">
+<id name="id_log" unsaved-value="null">
+<generator class="sequence">
+    <param name="sequence">SEQ_TSIPLOG</param>
+</generator>
+</id>
+<property name="id_usuario"  not-null="true"/>
+<property name="operacion"  not-null="true"/>
+<property name="nombre_tabla"  not-null="true"/>
+<property name="id_registro"  not-null="true"/>
+<property name="fecha" not-null="true"/>
+<property name="estado_entidad" not-null="true"/>
+</class>
+</hibernate-mapping>
+

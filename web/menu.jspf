@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<div style="height: 155px; width: 100%; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://www.sun.com/web/ui">
+    <script language="javascript" type="text/JavaScript">
+            function cerrarSesion(){
+                var bCerrar;
+                bCerrar = confirm('Quiere cerrar la sesión?');
+                return bCerrar;
+            }
+    </script>
+    <ui:link binding="#{menu.link3}" id="link3" url="/resources/menu-nal.css"/>
+    <f:subview id="menu">
+        <h:panelGrid binding="#{menu.gridPanel3}" columns="1" id="gridPanel3" style="">
+            <h:panelGrid binding="#{menu.gridPanel4}" columns="3" id="gridPanel4" style="">
+                <ui:image binding="#{menu.image1}" id="image1" url="/images/bogota.jpg"/>
+                <ui:image binding="#{menu.image2}" id="image2" url="/images/sedebogota27.jpg"/>
+                <ui:image binding="#{menu.image3}" id="image3" url="/images/invias.gif"/>
+            </h:panelGrid>
+        </h:panelGrid>
+        <ui:tabSet binding="#{menu.tabSetSipol}" id="tabSetSipol" mini="true" style="top: 98px; position: absolute; width: 75%">
+            <ui:tab action="#{menu.tabAdmin_action}" binding="#{menu.tabAdmin}" id="tabAdmin" immediate="true" text="Administración">
+                <ui:panelLayout binding="#{menu.layoutPanel1}" id="layoutPanel1" style="">
+                    <h:panelGrid binding="#{menu.gridPanel1}" columnClasses="#{menu.colClasses}" columns="7" id="gridPanel1" style="">
+                        <ui:hyperlink action="#{menu.hyplnkPersonas_action}" binding="#{menu.hyplnkPersonas}" id="hyplnkPersonas" immediate="true"
+                            styleClass="subtab" text="Personas"/>
+                        <ui:hyperlink action="#{menu.hyplnkPerfiles_action}" binding="#{menu.hyplnkPerfiles}" id="hyplnkPerfiles" immediate="true"
+                            styleClass="subtab" text="Perfiles"/>
+                        <ui:hyperlink action="#{menu.hyplnkPermisos_action}" binding="#{menu.hyplnkPermisos}" id="hyplnkPermisos" immediate="true"
+                            styleClass="subtab" text="Permisos"/>
+                        <ui:hyperlink action="#{menu.hyplnkRecursos_action}" binding="#{menu.hyplnkRecursos}" id="hyplnkRecursos" immediate="true"
+                            styleClass="subtab" text="Recursos"/>
+                        <ui:hyperlink action="#{menu.hyplnkRoles_action}" binding="#{menu.hyplnkRoles}" id="hyplnkRoles" immediate="true" styleClass="subtab" text="Roles"/>
+                        <ui:hyperlink action="#{menu.hyplnkTablas_action}" binding="#{menu.hyplnkTablas}" id="hyplnkTablas" immediate="true" styleClass="subtab" text="Tablas"/>
+                        <ui:hyperlink action="#{menu.hyplnkUsuarios_action}" binding="#{menu.hyplnkUsuarios}" id="hyplnkUsuarios" immediate="true"
+                            styleClass="subtab" text="Usuarios"/>
+                    </h:panelGrid>
+                </ui:panelLayout>
+            </ui:tab>
+            <ui:tab action="#{menu.tabCorrespondencia_action}" binding="#{menu.tabCorrespondencia}" id="tabCorrespondencia" immediate="true" text="Correspondencia">
+                <ui:panelLayout binding="#{menu.layoutPanel2}" id="layoutPanel2" style="width: 100%;">
+                    <h:panelGrid binding="#{menu.gridPanel2}" columnClasses="#{menu.colClasses}" columns="2" id="gridPanel2" style="">
+                        <ui:hyperlink action="#{menu.hyplnkConsultar_action}" binding="#{menu.hyplnkConsultar}" id="hyplnkConsultar" immediate="true"
+                            styleClass="subtab" text="Consultar"/>
+                        <ui:hyperlink action="#{menu.hyplnkRegistrar_action}" binding="#{menu.hyplnkRegistrar}" id="hyplnkRegistrar" immediate="true"
+                            styleClass="subtab" text="Registrar"/>
+                    </h:panelGrid>
+                </ui:panelLayout>
+            </ui:tab>
+            <ui:tab action="#{menu.tabAyuda_action}" binding="#{menu.tabAyuda}" id="tabAyuda" immediate="true" text="Ayuda">
+                <ui:panelLayout binding="#{menu.layoutPanel3}" id="layoutPanel3" style="">
+                    <h:panelGrid binding="#{menu.gridPanel5}" columnClasses="#{menu.colClasses}" columns="3" id="gridPanel5">
+                        <ui:hyperlink action="#{menu.hyplnkGeneral_action}" binding="#{menu.hyplnkGeneral}" id="hyplnkGeneral" immediate="true"
+                            styleClass="subtab" text="General"/>
+                        <ui:hyperlink action="#{menu.hyplnkAdmin_action}" binding="#{menu.hyplnkAdmin}" id="hyplnkAdmin" immediate="true" styleClass="subtab" text="Administración"/>
+                        <ui:hyperlink action="#{menu.hyplnkCorrespondencia_action}" binding="#{menu.hyplnkCorrespondencia}" id="hyplnkCorrespondencia"
+                            immediate="true" styleClass="subtab" text="Correspondencia"/>
+                    </h:panelGrid>
+                </ui:panelLayout>
+            </ui:tab>
+        </ui:tabSet>
+        <ui:hyperlink action="#{menu.hyplnkLogout_action}" binding="#{menu.hyplnkLogout}" id="hyplnkLogout" immediate="true"
+            onClick="if ( cerrarSesion() == false ) return false" style="left: 649px; top: 105px; position: absolute; text-align: center; width: 93px" text="Cerrar sesión"/>
+    </f:subview>
+</div>

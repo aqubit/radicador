@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.datasource">jdbc/SipDS</property>
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+        <!-- Echo all executed SQL to stdout -->
+        <!--property name="jdbc.use_streams_for_binary">true</property-->
+        <!-- Mappings del SIPOL -->
+        <mapping resource="com/unal/convenio/sip/admin/voh/TablaReferenciaVo.hbm.xml"/>
+        <mapping resource="com/unal/convenio/sip/admin/voh/TipoReferenciaVo.hbm.xml"/>
+        <mapping resource="com/unal/convenio/sip/admin/voh/PersonaVo.hbm.xml"/>
+        <mapping resource="com/unal/convenio/sip/admin/voh/RolVo.hbm.xml"/>
+        <mapping resource="com/unal/convenio/sip/admin/voh/RecursoVo.hbm.xml"/>
+        <mapping resource="com/unal/convenio/sip/admin/voh/UsuarioVo.hbm.xml"/>                        
+	<mapping resource="com/unal/convenio/sip/correspondencia/voh/CorrespondenciaVo.hbm.xml"/> 
+        <mapping resource="com/unal/convenio/sip/correspondencia/voh/EstadoCorrespondenciaVo.hbm.xml"/> 
+        <mapping resource="com/unal/convenio/sip/correspondencia/voh/DocumentoVo.hbm.xml"/> 
+	<mapping resource="com/unal/convenio/sip/common/voh/LogVo.hbm.xml"/>
+     </session-factory>
+     <!--
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+	<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>     
+     -->
+</hibernate-configuration>

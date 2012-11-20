@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.unal.convenio.sip.correspondencia.voh.DocumentoVo" table="TSIP_DOCUMENTO_CORRESPONDENCIA">
+<id name="id" column="ID_DOCUMENTO">
+    <generator class="foreign">
+        <param name="property">correspondencia</param>
+    </generator>
+</id>
+<one-to-one name="correspondencia"  cascade="none" class="com.unal.convenio.sip.correspondencia.voh.CorrespondenciaVo"/>
+<property name="nombre_documento" not-null="true"/>
+<property name="archivo" not-null="true"/>
+</class>
+</hibernate-mapping>
+

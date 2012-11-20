@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.unal.convenio.sip.correspondencia.voh.CorrespondenciaVo" table="TSIP_CORRESPONDENCIA" batch-size="10">
+<id name="id_correspondencia" unsaved-value="null">
+<generator class="sequence">
+    <param name="sequence">SEQ_TSIPCORRESPONDENCIA</param>
+</generator>
+</id>
+<property name="consecutivo" generated="insert"/>
+<property name="rol_propietario" not-null="true"/>
+<many-to-one name="idref_estadoactual" cascade="none" class="com.unal.convenio.sip.admin.voh.TablaReferenciaVo" not-null="true"/>
+<many-to-one name="idper_remitente" cascade="none" class="com.unal.convenio.sip.admin.voh.PersonaVo" not-null="true"/>
+<many-to-one name="idper_destinatario" cascade="none" class="com.unal.convenio.sip.admin.voh.PersonaVo"/> <!--not-null="true" -->
+<many-to-one name="idref_tipo" cascade="none" class="com.unal.convenio.sip.admin.voh.TablaReferenciaVo"/> <!--not-null="true" -->
+<property name="id_corresp_padre"/>
+<property name="caracter"  not-null="true"/>
+<property name="clase" not-null="true"/>
+<property name="asunto_borrar"/>
+<property name="asunto" not-null="true"/>
+<property name="grupo" />
+<property name="fecha_entrega" not-null="true"/>
+<property name="nro_radicacion"/>   <!--not-null="true" -->
+<property name="fecha_radicacion"/> <!--not-null="true" -->
+<property name="nro_radicacion_invias"/>
+<property name="fecha_radicacion_invias"/>
+<property name="nro_contrato"/>
+<property name="ano_contrato"/>
+<many-to-one name="dependencia" cascade="none" column="IDREF_DEPENDENCIA" class="com.unal.convenio.sip.admin.voh.TablaReferenciaVo"/>
+<property name="fecha_vencimiento"/>
+<property name="ultima_modificacion"/>
+<many-to-one name="documento" cascade="none" class="com.unal.convenio.sip.correspondencia.voh.DocumentoVo" column="ID_DOCUMENTO" unique="true"/>
+</class>
+</hibernate-mapping>
+

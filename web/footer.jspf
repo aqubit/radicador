@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<div style="height: 80px; width: 100%; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://www.sun.com/web/ui">
+    <f:subview id="footer">
+        <ui:pageSeparator binding="#{footer.pageSeparator1}" id="pageSeparator1" style="width: 75%;"/>
+        <table border="0" cellpadding="0" cellspacing="0" width="780">
+            <tr>
+                <td class="pie1">
+                    <div align="center">
+                        <p>
+                            <span class="pie1">
+                                <a class="pie1" href="http://www.sia.unal.edu.co/" target="_blank">SIA</a>
+                                <a class="pie1" href="http://www.sia.unal.edu.co/" target="_blank"> | </a>
+                                <a class="pie1" href="contenido/bibliotecas.htm" target="_blank"></a>
+                            </span>
+                            <a class="pie1" href="http://www.unal.edu.co/contenido/bibliotecas.htm" target="_blank">Bibliotecas </a> | <a class="pie1"
+                                href="http://www.unal.edu.co/contenido/directorio.php" target="_blank">Directorio </a> | <a class="pie1"
+                                href="http://www.unal.edu.co/redirect/archivo.htm" target="_blank">Archivo </a>| <a class="pie1"
+                                href="http://www.unal.edu.co/secretaria/comunicados.html" target="_blank">Comunicados </a> | <a class="pie1"
+                                href="http://www.unal.edu.co/contenido/correo.htm" target="_blank">Correo </a> | <a class="pie1"
+                                href="http://www.unal.edu.co/contenido/calendario.htm" target="_blank">Calendario </a> | <a class="pie1"
+                                href="http://www.unal.edu.co/contenido/agenda_un.htm" target="_blank">Agenda UN </a> | <a class="pie1"
+                                href="http://www.unal.edu.co/contenido/contratacion.htm" target="_blank">Contratación </a> | <a class="pie1"
+                                href="http://www.unal.edu.co/contenido/sistema_quejas_reclamos_y_sugerencias.htm" target="_blank">Sistema quejas </a> | <a
+                                class="pie1" href="http://www.unal.edu.co/contenido/avisolegal.htm" target="_blank">Aviso legal </a>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="normal">
+                    <div align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" height="54" width="780">
+                            <tr>
+                                <td class="pie1" target="_blank" valign="bottom" width="429">
+                                    <div align="left">
+                                        <div align="left">Ciudad Universitaria - Bogotá; D.C.- Colombia <br/>
+                        Avenida Carrera 30 N° 45-03 Conmutador (57)(1) 3165000</div>
+                                    </div>
+                                </td>
+                                <td valign="bottom" width="351">
+                                    <div align="right">
+                                        <img border="0" height="36" href="#" src="/Sip/images/conectividad.gif" usemap="#MapMap" width="350"/>
+                                        <map name="MapMap">
+                                            <area alt="Red Universitaria Metropolitana de Bogotá" coords="5,0,85,68" href="http://www.rumbo.edu.co" shape="rect" target="_blank"/>
+                                            <area coords="90,0,180,51" href="http://www.universia.net.co/" shape="rect" target="_blank"/>
+                                            <area coords="187,0,263,58" href="http://www.gobiernoenlinea.gov.co/" shape="rect" target="_blank"/>
+                                            <area coords="269,0,427,81" href="http://www.undigital.unal.edu.co/" shape="rect" target="_blank"/>
+                                        </map>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </f:subview>
+</div>

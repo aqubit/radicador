@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.unal.convenio.sip.admin.voh.PersonaVo" table="TSIP_PERSONA">
+<id name="id_persona" unsaved-value="null">
+<generator class="sequence">
+    <param name="sequence">SEQ_TSIPPERSONA</param>
+</generator>
+</id>
+<many-to-one name="idref_tipopersona" cascade="none" class="com.unal.convenio.sip.admin.voh.TablaReferenciaVo" fetch="join" not-null="true" lazy="false"/>
+<many-to-one name="idref_tipodocumento" cascade="none" class="com.unal.convenio.sip.admin.voh.TablaReferenciaVo" fetch="join" not-null="true" lazy="false"/>
+<property name="documento"  not-null="true"/>
+<property name="nombre1"  not-null="true"/>
+<property name="nombre2"/>
+<property name="apellido1"/>
+<property name="apellido2"/>
+<property name="email"/>
+<property name="telefono"/>
+</class>
+</hibernate-mapping>
+

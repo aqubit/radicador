@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.unal.convenio.sip.admin.voh.TipoReferenciaVo" table="TSIP_TIPO_REFERENCIA">
+<id name="id_tiporeferencia" unsaved-value="null">
+<generator class="sequence">
+    <param name="sequence">SEQ_TSIPTIPOREFERENCIA</param>
+</generator>
+</id>
+<property name="nombre"  not-null="true"/>
+<property name="descripcion"  not-null="true"/>
+<property name="abreviacion"  not-null="true"/>
+<set name="referencias" cascade="none" inverse="true" order-by="lower(nombre) asc">
+    <key column="ID_TIPOREFERENCIA"/>
+    <one-to-many class="com.unal.convenio.sip.admin.voh.TablaReferenciaVo"/>
+</set>
+</class>
+</hibernate-mapping>
+

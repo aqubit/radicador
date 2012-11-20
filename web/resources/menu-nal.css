@@ -1,0 +1,218 @@
+.normal {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+}
+.pie1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #999999;
+}
+.Titulo1 {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 12px;
+   font-weight: bold
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/*td {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #003399;
+}
+}*/
+
+/* Style rules for message severity levels */
+
+.infoMessage {
+  color: black;
+}
+
+.warnMessage {
+  color: orange;
+  font-weight: bold;
+}
+
+.errorMessage {
+  color: red;
+  font-weight: bold;
+}
+
+.fatalMessage {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.MsgFldSumTxt {color:#C00;font-weight:bold}
+.MsgFldTxt {color:#C00}
+.MsgGrpTbl {
+   background-color: #ffffff;
+   border: solid 1px #999;
+   color: #000
+}
+.MsgGrpTbl td {border:solid 0px #999;background-color:#fff}
+.MsgGrpTblTtl 
+     {
+   background-color: #ffff99;
+   border: solid 0px #999;
+   border-left: solid 1px #999;
+   border-right: solid 1px #999;
+   border-top: solid 1px #999;
+   color: #000;
+   font-size: 12px;
+   font-weight: bold;
+   margin-top: 15px;
+   padding: 10px 10px 0px;
+   text-align: left
+}
+.MsgGrpDiv ul 
+     {color:#C00;
+      list-style-type:square;
+      padding:0px 10px 0px 18px;
+      margin:6px 0px}
+.MsgGrpSumTxt {color:#000}
+.MsgGrpTxt 
+     {color:#333;display:block;
+      padding-bottom:3px}
+.MsgGrpDiv {margin:0px}
+.MsgGrpSumTxt 
+     {display:block;font-weight:normal;
+      padding-bottom:2px}
+.MsgInfo {color: black;}
+.MsgWarn {color: orange;font-weight: bold;}
+.MsgError {color: red;font-weight: bold;}
+.MsgFatal 
+     {color: red;font-style: italic;
+      font-weight: bold;}
+.MsgGrpInfo {color: black;}
+.MsgGrpWarn {color: orange;font-weight: bold;}
+.MsgGrpError {color: red;font-weight: bold;}
+.MsgGrpFatal 
+     {color: red;font-style: italic;
+      font-weight: bold;}
+
+.TablaSipPrimeraColumna{
+   background-color: #fff;
+   text-align: left;
+   width: 15%
+}
+.TablaSipRestoColumnas{
+   background-color: #e6eff8;
+   width: 85%
+}
+caption.TblTtlTxt {
+        font-weight:normal;
+        font-size: 12px;
+}
+.labelForm {
+   font-size: 12px;
+   font-weight: normal;
+   text-align: left;
+   vertical-align: middle
+}
+.lblTitulo {
+   color: #000000;
+   font-family: Arial,Helvetica,sans-serif;
+   font-size: 12px;
+   font-weight: bold;
+   vertical-align: baseline
+}
+.lblTituloPaginaActual{
+   color: #000000;
+   font-family: Arial,Helvetica,sans-serif;
+   font-size: 12px;
+   font-weight: bold;
+   vertical-align: baseline;
+   text-transform: uppercase;
+}
+
+.subtab{
+   border-bottom: none;
+   border-right: solid 1px gray;
+   color: black;
+   padding-left: 3px;
+   padding-right: 3px;
+   text-decoration: none
+}
+
+a[hover] { 
+   text-decoration: underline 
+}
+
+.notselected {
+   background-color: #e6eff8;
+}
+.selected {
+   background-color: #ffffcc;
+   font-weight: bold
+}
+
+/* MINI-TABS */
+/* [css_ie55up.css: no overwrite classes for this component] */
+.MniTabDiv {
+   background-color: #2b4673;
+   position: relative;
+}
+
+.MniTabDiv {
+   background-color: #2b4673;
+   position: relative;
+}
+table.MniTabTbl td {
+   background-color: #e6eff8;
+   background-image: url(none);
+   border: solid 1px #6E7F90;
+   padding-left: 5px;
+   padding-right: 5px
+   text-align: center;
+}
+a.MniTabLnk:link,a.MniTabLnk:visited {color:#000;text-decoration:none}
+a.MniTabLnk:hover {text-decoration:underline}
+.MniTabSelTxt {
+   color: #2b4673;
+   font-weight: bold;
+   text-align: center;
+   text-decoration: none
+}
+table.MniTabTbl td.MniTabTblSelTd {
+   background-color:#ffffcc;
+   border-left:solid 1px #6E7F90;
+   border-right:solid 1px #6E7F90;
+   border-top:solid 1px #6E7F90; 
+   background-image: url(none);
+   border-bottom:none;
+   text-align: center;
+}
+.MniTabDiv td.hidden {display:none}
+
+.TtlLin {
+   background-color:#2b4673;
+}
+
+.BarraHeader {
+   background-color: #2b4673;
+   background-image: url(barra_background.jpg);
+   background-repeat: repeat-x;
+}
+
+.TituloAyuda {
+   color: #000000;
+   font-family: Arial,Helvetica,sans-serif;
+   font-size: 12px;
+   font-weight: bold;
+   vertical-align: baseline;
+   background-image: url(barra_background2.jpg);
+   background-repeat: repeat-x;
+}
+
+.textoAyuda{
+   font-size: 12px;
+   font-weight: normal;
+   text-align: justify;
+}

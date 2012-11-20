@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="" style="height: 155px; width: 100%; -rave-layout: grid" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://www.sun.com/web/ui">
+    <ui:link binding="#{_header.link1}" id="link1" url="/resources/menu-nal.css"/>
+    <f:subview id="header">
+        <h:panelGrid binding="#{_header.pnlHeader1}" columns="1" id="pnlHeader1">
+            <h:panelGrid binding="#{_header.gridPanel1}" columns="3" id="gridPanel1" style="">
+                <ui:image binding="#{_header.image1}" id="image1" url="/images/bogota.jpg"/>
+                <ui:image binding="#{_header.image2}" id="image2" url="/images/sedebogota27.jpg"/>
+                <ui:image binding="#{_header.image3}" id="image3" url="/images/invias.gif"/>
+            </h:panelGrid>
+        </h:panelGrid>
+        <ui:pageSeparator binding="#{_header.pageSeparator1}" id="pageSeparator1" style="left: 0px; top: 98px; position: absolute;width: 75%" styleClass="BarraHeader"/>
+    </f:subview>
+</div>

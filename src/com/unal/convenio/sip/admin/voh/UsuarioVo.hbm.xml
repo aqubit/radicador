@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.unal.convenio.sip.admin.voh.UsuarioVo" table="TSIP_ADMIN_USUARIO">
+<id name="id_usuario" unsaved-value="null">
+<generator class="sequence">
+    <param name="sequence">SEQ_TSIPADMINUSUARIO</param>
+</generator>
+</id>
+<property name="login"  not-null="true"/>
+<property name="disabled"/>
+<many-to-one name="persona"  cascade="none" column="ID_PERSONA" class="com.unal.convenio.sip.admin.voh.PersonaVo" not-null="true"/>
+<set name="roles" table="TSIP_ADMIN_USUARIO_ROL" inverse="true">
+    <key column="ID_USUARIO"/>
+    <many-to-many class="com.unal.convenio.sip.admin.voh.RolVo" column="ID_ROL"/>
+</set>
+<property name="password" not-null="true"/>
+</class>
+</hibernate-mapping>
+
